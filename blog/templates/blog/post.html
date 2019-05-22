@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" href="/blog/{{post.id}}">Lesson</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{ post.vocab }}" target="_blank">Vocabulary</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{ post.wiki }}" target="_blank">Wiki</a>
+  </li>
+</ul>
+<div class="container">
+<div class="col-sm-10" class="margin: 20%" class="padding: 20%">
+<h3><a href="/blog/{{post.id}}">{{ post.title }}</a></h3>
+<strong>{{ post.name }}</strong></h6>
+
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="{{ post.presentation }}" allowfullscreen></iframe>
+</div>
+<br>
+<div class="d-inline-flex p-2 bd-highlight" class="padding: 100px;">
+	<strong>{{ post.ls|safe|linebreaks}} </strong>
+</div>
+<h3>Guiding Question</h3>
+<div class="d-inline-flex p-2 bd-highlight"class="margin: 25px;" >
+	{{ post.question|linebreaks|safe }}
+</div>
+<h3>Background</h3>
+<div class="container"class="margin: 25px;" >
+	{{ post.background|linebreaks|safe }}
+</div>
+<h3>Preformace Task</h3>
+<div class="container"class="margin: 25px;" >
+	{{ post.perfTask|linebreaks|safe }}
+</div>
+</br>
+</div class="col-sm-2">
+<br>
+	<a class="btn btn-primary" href="{{ post.quiz }}" role="button" >Check for Understanding
+	</a>
+<div>
+	</div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+	<div class="container">
+		<h2> Create your own lesson here. </h2>
+		<br>
+		<p></p>
+	</div>
+		<br>
+
+		<!--Contact form-->
+		<div class="container">
+			<form action="{% url 'postform' %}" method="post">
+				{% csrf_token %}
+		  <div class="form-group">
+		    <label for="example-email-input">Title</label>
+		    <input type="text" name="title" class="form-control" placeholder="Exploring the universe" >
+		  </div>
+			<div class="form-group">
+			 <label for="exampleFormControlInput1">Name</label>
+			 <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="John Doe" >
+		 </div>
+		  <div class="form-group">
+		    <label for="exampleFormControlTextarea1">Learning target</label>
+		    <textarea type="text" name="ls" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+		  </div>
+			<div class="form-group">
+		    <label for="exampleFormControlTextarea1">Guiding Question</label>
+		    <textarea type="text" name="question" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+		  </div>
+			<div class="form-group">
+			 <label for="exampleFormControlInput1">Presentation Link</label>
+			 <input type="text" name="presentation" class="form-control" id="exampleFormControlInput1" placeholder="Youtube link" >
+		 </div>
+      <div class="form-group">
+		    <label for="exampleFormControlTextarea1">Background</label>
+		    <textarea type="text" name="background" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+		  </div>
+			<div class="form-group">
+		    <label for="exampleFormControlTextarea1">Preformace Task</label>
+		    <textarea type="text" name="perfTask" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+		  </div>
+			<div class="form-group">
+			 <label for="exampleFormControlInput1">Quiz link</label>
+			 <input type="text" name="quiz" class="form-control" id="exampleFormControlInput1" placeholder="Google forms link" >
+		 </div>
+		 <div class="form-group">
+			<label for="exampleFormControlInput1">Vocabulary link</label>
+			<input type="text" name="vocab" class="form-control" id="exampleFormControlInput1" placeholder="Quizlet link" >
+		</div>
+		<div class="form-group">
+		 <label for="exampleFormControlInput1">Wiki link</label>
+		 <input type="text" name="wiki" class="form-control" id="exampleFormControlInput1" placeholder="Wiki link" >
+	 </div>
+			<button type="submit" name="date" class="btn btn-primary">Submit</button>
+		</form>
+		</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<h1> Welcome to your kingdom of lesson plans</h1>
+<h4>
+	Load your lesson plans here to help improve the kingdom
+</h4>
+	<br>
+	<h2> Lesson Plans</h2>
+	<br>
+	<div class="card-columns">
+    <div>
+			{% for post in object_list %}
+				<div class="card" style="width: 20rem;">
+					<div class="card-body">
+						<h3 class="card-title">{{post.title}}</h3>
+						<h6> {{ post.ls }} <h6>
+							<br>
+						<a href="/blog/{{post.id}}" class="btn btn-primary">Lesson</a>
+					</div>
+				</div>
+			<br>
+			 {% endfor %}
+    </div>
+	</div>
+
+{% endblock %}
